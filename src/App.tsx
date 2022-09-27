@@ -1,17 +1,20 @@
 import React from "react";
 import { WiSunrise } from "react-icons/wi";
 import { BsFillMoonStarsFill } from "react-icons/bs";
+import Header from "./components/Header";
 
 import "./App.css";
 import News from "./components/News";
+import Finance from "./components/Finance";
+import Weather from "./components/Weather";
 
 function App() {
   const date = new Date();
   const showTime = date.getHours();
 
   return (
-    <div>
-      {(() => {
+    <div className="App h-screen overflow-y-scroll scrollbar-hide overflow-x-hidden px-6">
+      {/* {(() => {
         if (showTime < 12) {
           return (
             <div>
@@ -39,9 +42,14 @@ function App() {
           );
         }
       })()}
+     */}
+    
+    <Header />
+     <Finance/> 
+    
 
-      <News />
-    </div>
+  </div>  
+    
   );
 }
 
