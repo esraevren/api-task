@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Card, Image, Text } from "@mantine/core";
 
 function News() {
   const [articles, setArticles] = useState<{
     title: string;
     urlToImage: string;
     description: string;
-  }>({ title:"", urlToImage:"", description:"" });
+  }>({ title: "", urlToImage: "", description: "" });
 
   useEffect(() => {
     const getArticles = async () => {
@@ -20,31 +19,20 @@ function News() {
     getArticles();
   }, []);
   return (
-    <div className=" bg-gray-100" >
-      <div className="md:h-full flex items-center text-gray-600">
-        <div className="container  px-5  mx-auto">
-        <div className="flex flex-wrap -m-4">
-       <div className="p-4 sm:w-1/2 lg:w-1/3 ">
-                    <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                        <img className="lg:h-72 md:h-48 w-full object-cover object-center"
-                            src={articles.urlToImage} alt="blog" />
-                        <div className="p-6 hover:bg-indigo-700 hover:text-white transition duration-300 ease-in">
-                        <h2 className="text-base font-medium text-indigo-300 mb-1">October 29,
-                                2021</h2>
-                            <h1 className="text-2xl font-semibold mb-3">{articles.title}</h1>
-                            <p className="leading-relaxed mb-3">{articles.description}</p>
-                                
-                          </div>
-                      </div>
-                      
-                </div>
-          </div>
-        </div>
-
+    <div className="flex flex-col items-center  rounded-lg border shadow-2xl md:flex-row md:max-w-xl hover:bg-gray-100 ">
+      <img
+        className="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+        src={articles.urlToImage}
+        alt=""
+      />
+      <div className="flex flex-col justify-between p-4 leading-normal">
+        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          {articles.title}
+        </h5>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          {articles.description}
+        </p>
       </div>
-
-      
-
     </div>
   );
 }

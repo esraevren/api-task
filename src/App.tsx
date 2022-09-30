@@ -7,6 +7,8 @@ import "./App.css";
 import News from "./components/News";
 import Finance from "./components/Finance";
 import Weather from "./components/Weather";
+import Content from "./components/Content";
+
 
 function App() {
   const date = new Date();
@@ -45,7 +47,14 @@ function App() {
      */}
     
     <Header />
-     <Finance/> 
+    <div className="flex items-start space-x-2 justify-start w-full ">
+        <Finance/> 
+        <Content />
+       
+      </div>
+    
+
+     
     
 
   </div>  
