@@ -9,56 +9,18 @@ import Finance from "./components/Finance";
 import Weather from "./components/Weather";
 import Content from "./components/Content";
 
-
 function App() {
   const date = new Date();
   const showTime = date.getHours();
 
   return (
     <div className="App h-screen overflow-y-scroll scrollbar-hide overflow-x-hidden px-6">
-      {/* {(() => {
-        if (showTime < 12) {
-          return (
-            <div>
-              <h1 className="text-2xl font-bold  text-red-600">
-                Günaydın <WiSunrise />
-              </h1>
-            </div>
-          );
-        } else if (showTime < 18) {
-          return (
-            <div>
-              <h1 className=" flex items-center  text-2xl font-bold  text-red-600">
-                {" "}
-                Tünaydın <WiSunrise />{" "}
-              </h1>
-            </div>
-          );
-        } else {
-          return (
-            <div>
-              <h1 className="text-2xl font-bold  text-red-600">
-                İyi akşamlar <BsFillMoonStarsFill />{" "}
-              </h1>
-            </div>
-          );
-        }
-      })()}
-     */}
-    
-    <Header />
-    <div className="flex items-start space-x-2 justify-start w-full ">
-        <Finance/> 
+      <Header />
+      <div className="flex items-start space-x-2 justify-start w-full ">
+        <Finance />
         <Content />
-       
       </div>
-    
-
-     
-    
-
-  </div>  
-    
+    </div>
   );
 }
 
